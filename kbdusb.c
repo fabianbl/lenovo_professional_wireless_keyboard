@@ -335,7 +335,7 @@ int main() {
 
   /* usb_reset(lenovo_combo); */
   struct input_event ev;
-  const int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK | O_DSYNC);
+  const int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK | O_SYNC);
   ret = ioctl(fd, UI_SET_EVBIT, EV_KEY);
   ret = ioctl(fd, UI_SET_EVBIT, EV_SYN);
   ret = ioctl(fd, UI_SET_KEYBIT, KEY_A); /* Auth KEY_A */

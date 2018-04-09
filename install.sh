@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcc -o kbdusb kbdusb.c &\
+gcc -std=c99  -o kbdusb kbdusb.c &\
 sudo cp kbdusb /usr/local/bin/. &\
 sudo cp lenovo_keyboard.sh /usr/local/bin/. &\
 sudo cp lenovo_keyboard.service /etc/systemd/system/. &\
