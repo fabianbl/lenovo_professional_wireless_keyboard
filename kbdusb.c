@@ -442,7 +442,7 @@ int main() {
   ret = ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEDOWN);
   ret = ioctl(fd, UI_SET_KEYBIT, KEY_VOLUMEUP);
   ret = ioctl(fd, UI_SET_KEYBIT, KEY_CALC);
-  ret = ioctl(fd, UI_SET_KEYBIT, KEY_COPY);
+  ret = ioctl(fd, UI_SET_KEYBIT, KEY_LEFTMETA);
   ret = ioctl(fd, UI_SET_KEYBIT, KEY_102ND);
 
   struct uinput_user_dev uidev;
@@ -558,7 +558,7 @@ int main() {
           memset(&ev, 0, sizeof(ev));
           ev.type = EV_KEY;
           ev.value = 0;
-          ev.code = KEY_COPY;
+          ev.code = KEY_LEFTMETA;
           ret = write(fd, &ev, sizeof(ev));
         }
 
@@ -623,7 +623,7 @@ int main() {
           memset(&ev, 0, sizeof(ev));
           ev.type = EV_KEY;
           ev.value = 1;
-          ev.code = KEY_COPY;
+          ev.code = KEY_LEFTMETA;
           ret = write(fd, &ev, sizeof(ev));
         }
       }
